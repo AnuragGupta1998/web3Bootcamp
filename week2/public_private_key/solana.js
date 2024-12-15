@@ -7,10 +7,12 @@ async function main() {
   
   // Convert the message "hello world" to a Uint8Array
   const message = new TextEncoder().encode("hello world");
+  console.log("message",message)
   
   // Generate the public key from the private key
   const pubKey = await ed.getPublicKeyAsync(privKey);
   console.log("public key",pubKey)
+  console.log("public key",pubKey.toString("bs58"))
 
   // Sign the message
   const signature = await ed.signAsync(message, privKey);
