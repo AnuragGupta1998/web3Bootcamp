@@ -10,6 +10,7 @@ console.log("Mnemonic",mnemonic)
 
 const seed = mnemonicToSeedSync(mnemonic); //generating root seed from mnemonics
 console.log("seed",seed)
+console.log("seedHex value ",seed.toString("hex"))
 
 //generating 4th times different different public key
 for (let i = 0; i < 4; i++) {
