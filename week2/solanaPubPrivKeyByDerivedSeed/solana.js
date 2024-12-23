@@ -6,7 +6,7 @@ import { Keypair } from "@solana/web3.js";
 import bs58 from 'bs58'
 
 const mnemonic = generateMnemonic();  //generating 12 word mnemonic phrases
-console.log("Mnemonic",mnemonic)
+console.log("Mnemonic",mnemonic.split(" "))
 
 const seed = mnemonicToSeedSync(mnemonic); //generating root seed from mnemonics
 console.log("seed",seed)
