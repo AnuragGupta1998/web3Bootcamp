@@ -1,5 +1,5 @@
 {
-  "name": "week5-dapp-walletadapter",
+  "name": "week5-walletadapter-dapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,7 @@
     "@solana/wallet-adapter-react": "^0.15.35",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@solana/wallet-adapter-wallets": "^0.19.32",
-    "cors": "^2.8.5",
+    "@solana/web3.js": "^1.98.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

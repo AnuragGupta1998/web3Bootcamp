@@ -8,28 +8,34 @@ import {
 
 } from "@solana/wallet-adapter-react-ui";
 
-import { clusterApiUrl } from "@solana/web3.js";
+// import { clusterApiUrl } from "@solana/web3.js";
 
 import "@solana/wallet-adapter-react-ui/styles.css";
+
 import Airdrop from "./Airdrop";
 
 function App() {
 
+  const url="https://solana-devnet.g.alchemy.com/v2/j4s0Qeb-r63Z-Wxs9ceEh5aWI9fkvhyo"
 
   return (
     <>
       {/* this provide connection to Blockchain and  endpoint replace with RPC endpoint(https://api.devnet.solana.com) */}
-      <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
+      <ConnectionProvider endpoint={url}>
+
         {/* this provide wallet object that lets you  automatically detect wallet */}
           <WalletProvider wallets={[]} autoConnect> 
+
             {/* this provide popup object how the wallet popup while connecting to wallet */}
               <WalletModalProvider>
+                
                 <div className="flex flex-row justify-center mt-5 gap-2 w-full">
                   {/* it provide select wallet button */}
                   <WalletMultiButton />
                   {/* it provide disconnect button */}
                   <WalletDisconnectButton />
                 </div>
+
                 <Airdrop />
 
                 {/* <RequestAirdrop />
