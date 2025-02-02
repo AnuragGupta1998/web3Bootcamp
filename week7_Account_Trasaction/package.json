@@ -1,0 +1,19 @@
+{
+  "name": "week7_account_trasaction",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.98.0",
+    "base58": "^2.0.1",
+    "bip39": "^3.1.0",
+    "bs58": "^6.0.0"
+  }
+}
