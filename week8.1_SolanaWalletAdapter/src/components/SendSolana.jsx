@@ -28,7 +28,7 @@ function SendSolana() {
         alert("Please connect to a network");
         return;
       }
-
+      
       const trasanction = new Transaction();
 
       trasanction.add(
@@ -38,15 +38,10 @@ function SendSolana() {
           lamports  : amount*LAMPORTS_PER_SOL
         }),
       );
-      // await sendAndConfirmTransaction(connection,trasanction,[wallet]);
-      // await wallet.sendTransaction(trasanction, connection);
-      await wallet.sendTransaction(trasanction,connection);
 
-    
+      await wallet.sendTransaction(trasanction,connection);
       alert("Transaction sent",amount,"to",address);
 
-      // console.log("amount "+amount)
-      // console.log("address "+address)
       setAddress("");
       setAmount("");
 
