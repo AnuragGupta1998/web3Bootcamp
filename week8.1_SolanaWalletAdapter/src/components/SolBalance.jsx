@@ -15,12 +15,12 @@ import { useEffect } from "react";
             setBalance(bal/LAMPORTS_PER_SOL);
         }
     }
-    displayBalance();
+    // displayBalance();
 
-    // useEffect(() => {
-    //   displayBalance();
+    useEffect(() => {
+      displayBalance();
       
-    // }, [wallet.publicKey]);
+    }, [wallet.publicKey]);
 
 
   return (
