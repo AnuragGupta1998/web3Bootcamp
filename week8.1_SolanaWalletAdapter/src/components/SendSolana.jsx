@@ -1,8 +1,6 @@
 import React from 'react'
 import { useWallet, useConnection } from "@solana/wallet-adapter-react";
-import { LAMPORTS_PER_SOL, Transaction, PublicKey, SystemProgram,sendAndConfirmTransaction} from '@solana/web3.js';
-
-
+import { LAMPORTS_PER_SOL, Transaction, PublicKey, SystemProgram} from '@solana/web3.js';
 
 function SendSolana() {
 
@@ -12,9 +10,6 @@ function SendSolana() {
     const[amount, setAmount] = React.useState("");
 
     async function sendSol(){
-
-      console.log("address",typeof(address));
-      alert("address: "+address+ " amount: "+amount);
 
       if(!address){
         alert("Please enter a valid address");
@@ -39,7 +34,7 @@ function SendSolana() {
         }),
       );
 
-      await wallet.sendTransaction(trasanction,connection);
+      await wallet.sendTransaction(trasanction,connection); //this request wallet to sign the transaction
       alert("Transaction sent",amount,"to",address);
 
       setAddress("");

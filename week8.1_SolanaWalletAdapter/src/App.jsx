@@ -14,6 +14,7 @@ import "./App.css";
 import AirdropSol from "./components/AirdropSol";
 import SolBalance from "./components/SolBalance";
 import SendSolana from "./components/SendSolana";
+import SignMessage from "./components/SignMessage";
 // import { useMemo } from "react";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <SolBalance />
             <AirdropSol />
             <SendSolana />
+            <SignMessage />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
