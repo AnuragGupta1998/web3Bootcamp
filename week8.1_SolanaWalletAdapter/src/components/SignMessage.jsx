@@ -1,22 +1,35 @@
 import React from 'react'
-import { useWallet, useConnection, } from "@solana/wallet-adapter-react";
-import {} from "@solana/web3.js"
+import { useWallet, useConnection, } from "@solana/wallet-adapter-react"
+import {ed25519} from "@noble/curves/ed25519"
+import bs58 from "bs58"
 
 
 function SignMessage() {
+
     const[message, setMessage] = React.useState('');
+    const{publicKey,signMessage} = useWallet();
 
-    async function sendMsg(){   
+    async function signMsg(){
+      if(!publicKey) throw new Error('Wallet not connected');
+      
+      if(!signMessage) throw new Error('Wallets does not support Sign message');
 
-       const msg="hi i am anurag";
-       const encodeMsg= new TextEncoder().encode(msg);
+      const encodeMsg = new TextEncoder().encode(message);
+      const sign = await signMessage(encodeMsg);
 
+      const verifySign = ed25519.verify(sign,encodeMsg,publicKey.toBytes());
+
+      if(!verifySign) throw new Error('Invalid Sign');
+
+      alert('Sign message is valid');
+      console.log("Message Signature",bs58.encode(sign)); 
 
     }
 
   return (
     <>
-    <div className='bg-yellow-200 w-full flex justify-between'>
+    <h1 className='text-cyan-200 text-2xl font-bold underline mb-5'>SIGN MESSAGE</h1>
+    <div className='bg-black w-full flex justify-between'>
         <input 
          type="text" 
          value={message} 
@@ -26,10 +39,10 @@ function SignMessage() {
         />
         <button 
          type='button'
-         onClick={sendMsg}
-         className='bg-red-500 text-white p-5 font-bold font-momo h-20 mt-8 mr-5 rounded-lg' 
+         onClick={signMsg}
+         className='bg-blue-500 text-2xl p-5 font-bold font-momo h-20 mt-8 mr-5 rounded-lg hover:bg-blue-700 hover:text-cyan-200' 
         >
-            send msg
+            Sign Message
         </button>
         
     </div>
