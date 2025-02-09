@@ -11,7 +11,7 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
-import TokenLaunchpad from "./components/TokenLaunchpad";
+import TokenLaunchpad  from "./components/TokenLaunchpad";
 
 function App() {
   const [count, setCount] = useState(0);
