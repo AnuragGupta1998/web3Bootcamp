@@ -18,13 +18,21 @@ async function main() {
       const quoteResponse = response.data;
       console.log(quoteResponse);
 
+      // try {
+      //   const { data: { swapTransaction } } = await (
+      //       await axios.post('https://quote-api.jup.ag/v6/swap', {
+      //           quoteResponse,
+      //           userPublicKey: wallet.publicKey.toString(),
+      //       })
+      //   );
       try {
-        const { data: { swapTransaction } } = await (
+        const swapResponse = await (
             await axios.post('https://quote-api.jup.ag/v6/swap', {
                 quoteResponse,
                 userPublicKey: wallet.publicKey.toString(),
             })
         );
+        const swapTransaction = swapResponse.data.swapTransaction;
 
         console.log("swapTransaction")
         const swapTransactionBuf = Buffer.from(swapTransaction, 'base64');
