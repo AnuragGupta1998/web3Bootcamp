@@ -34,11 +34,11 @@ function MnemonicCompo() {
        </button>
       </div>
 
-      <div className="bg-yellow-200 h-32 w-full flex flex-wrap gap-2">
+      <div className="bg-yellow-200 h-32 w-full flex flex-wrap gap-2 font-bold">
 
         {mnemonics.map((mnemonic,index) => (
       
-          <div key={index} className="bg-blue-100 h-5 w-14 ">{mnemonic}</div>
+          <div key={index} className="bg-blue-100 h-5 w-14 font-bold ">{mnemonic}</div>
           
         ))}
 
