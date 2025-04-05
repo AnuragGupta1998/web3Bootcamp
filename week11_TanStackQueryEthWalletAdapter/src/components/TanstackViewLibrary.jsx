@@ -16,11 +16,19 @@ async function getBalance() {
 }
 
 function TanstackViewLibrary() {
-  const query = useQuery({
-    queryKey: ["balance"],
-    queryFn: getBalance,
-    refetchInterval: 5 * 1000,
-  });
+
+  // custom hook
+  // function useBalance(){
+  //   return useQuery({
+  //     queryKey: ["balance"],
+  //     queryFn: getBalance,
+  //     refetchInterval: 5 * 1000,
+  //   });
+  // }
+  // const query = useBalance();
+
+  const query = useQuery({queryKey: ["balance"], queryFn: getBalance, refetchInterval: 5 * 1000,});
+
   if (query.isLoading) {
     return <div>Loading...</div>;
   }
