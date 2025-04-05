@@ -6,6 +6,9 @@ import FetchDataWeb2 from "./components/FetchDataWeb2";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Post from "./components/TenstackPost";
 import Viem from "./components/Viem";
+import TanstackViewLibrary from "./components/TanstackViewLibrary";
+
+
 
 function App() {
   const queryClient = new QueryClient();
@@ -17,6 +20,7 @@ function App() {
   <QueryClientProvider client={queryClient}>
 
     <Post />
+    <TanstackViewLibrary />
 
 
    </QueryClientProvider> 

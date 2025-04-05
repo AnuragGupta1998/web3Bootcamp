@@ -1,5 +1,5 @@
 import React from 'react'
-import {createPublicClient,http,weiUnits} from "viem"
+import {createPublicClient,http} from "viem"
 import {mainnet} from "viem/chains"
 
 //create client
