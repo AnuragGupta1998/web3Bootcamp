@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
 
+//create client from viem
 const client = createPublicClient({
   chain: mainnet,
   transport: http(),
@@ -27,6 +28,7 @@ function TanstackViewLibrary() {
   // }
   // const query = useBalance();
 
+  //created query from tanstack
   const query = useQuery({queryKey: ["balance"], queryFn: getBalance, refetchInterval: 5 * 1000,});
 
   if (query.isLoading) {
